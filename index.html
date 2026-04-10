@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashcroft — 2026 Ad Strategy & Creative Brief</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1F4E79;
+  --blue: #2E75B6;
+  --light-blue: #D6E4F0;
+  --meta: #3B5998;
+  --meta-light: #EEF2FF;
+  --green: #375623;
+  --green-light: #E2EFDA;
+  --orange: #C55A11;
+  --orange-light: #FCE4D6;
+  --teal: #00695C;
+  --teal-light: #E0F2F1;
+  --red: #C00000;
+  --red-light: #FFE2E2;
+  --yellow: #FFF3CD;
+  --white: #FFFFFF;
+  --off-white: #F7F9FC;
+  --dark: #1A1A1A;
+  --grey: #64748B;
+  --light-grey: #F1F5F9;
+  --border: #E2E8F0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--off-white);
+  color: var(--dark);
+  min-height: 100vh;
+}
+
+/* NAV */
+nav {
+  background: var(--navy);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+  height: 60px;
+}
+
+.nav-brand {
+  font-family: 'DM Serif Display', serif;
+  color: white;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+}
+
+.nav-brand span { color: #5B9BD5; }
+
+.nav-tabs {
+  display: flex;
+  gap: 0.25rem;
+  height: 100%;
+  align-items: center;
+}
+
+.nav-tab {
+  padding: 0.4rem 1rem;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.nav-tab:hover { color: white; background: rgba(255,255,255,0.1); }
+.nav-tab.active { color: white; background: var(--blue); }
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, #2d6098 60%, #1a3a5c 100%);
+  color: white;
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  pointer-events: none;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  color: #CADCFC;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.hero p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  min-width: 120px;
+}
+
+.hero-stat-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  color: white;
+  display: block;
+}
+
+.hero-stat-label {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* SECTIONS */
+.section { display: none; padding: 2rem; max-width: 1200px; margin: 0 auto; }
+.section.active { display: block; }
+
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+}
+
+.section-sub {
+  color: var(--grey);
+  font-size: 0.88rem;
+  margin-bottom: 2rem;
+}
+
+/* CARDS */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  padding: 1rem 1.25rem;
+  color: white;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.card-body { padding: 1.25rem; }
+
+.card-stat {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: var(--navy);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.card-stat-label {
+  font-size: 0.78rem;
+  color: var(--grey);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* STAT ROW */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-box {
+  background: white;
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-top: 3px solid var(--blue);
+}
+
+.stat-box.navy { border-color: var(--navy); }
+.stat-box.green { border-color: var(--green); }
+.stat-box.orange { border-color: var(--orange); }
+.stat-box.teal { border-color: var(--teal); }
+.stat-box.meta { border-color: var(--meta); }
+
+.stat-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  color: var(--dark);
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--grey);
+  margin-top: 0.2rem;
+}
+
+/* CHANNEL TABS */
+.channel-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.ch-tab {
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.ch-tab.google { color: var(--navy); border-color: var(--navy); }
+.ch-tab.google.active { background: var(--navy); color: white; }
+.ch-tab.meta { color: var(--meta); border-color: var(--meta); }
+.ch-tab.meta.active { background: var(--meta); color: white; }
+.ch-tab.bing { color: var(--teal); border-color: var(--teal); }
+.ch-tab.bing.active { background: var(--teal); color: white; }
+
+.ch-content { display: none; }
+.ch-content.active { display: block; }
+
+/* TWO COL */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+@media(max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+
+/* INFO BLOCK */
+.info-block {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-left: 4px solid var(--blue);
+}
+
+.info-block.navy { border-color: var(--navy); }
+.info-block.green { border-color: var(--green); }
+.info-block.orange { border-color: var(--orange); }
+.info-block.teal { border-color: var(--teal); }
+.info-block.meta { border-color: var(--meta); }
+.info-block.red { border-color: var(--red); }
+
+.info-block h3 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.info-block.navy h3 { color: var(--navy); }
+.info-block.green h3 { color: var(--green); }
+.info-block.orange h3 { color: var(--orange); }
+.info-block.teal h3 { color: var(--teal); }
+.info-block.meta h3 { color: var(--meta); }
+.info-block.red h3 { color: var(--red); }
+
+.info-block p, .info-block li {
+  font-size: 0.88rem;
+  color: var(--dark);
+  line-height: 1.6;
+  margin-bottom: 0.35rem;
+}
+
+.info-block ul { padding-left: 1.2rem; }
+
+/* ALERT */
+.alert {
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.88rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.alert.warning { background: var(--orange-light); color: var(--orange); border: 1px solid #f5c6a0; }
+.alert.success { background: var(--green-light); color: var(--green); border: 1px solid #b8d9a8; }
+.alert.info { background: var(--light-blue); color: var(--navy); border: 1px solid #aaccee; }
+.alert.danger { background: var(--red-light); color: var(--red); border: 1px solid #f5b8b8; }
+
+.alert-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+/* TABLE */
+.table-wrap {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.table-title {
+  padding: 1rem 1.25rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+
+th {
+  background: var(--light-grey);
+  padding: 0.6rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--grey);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--dark);
+}
+
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--off-white); }
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.badge.green { background: var(--green-light); color: var(--green); }
+.badge.orange { background: var(--orange-light); color: var(--orange); }
+.badge.red { background: var(--red-light); color: var(--red); }
+.badge.blue { background: var(--light-blue); color: var(--navy); }
+.badge.teal { background: var(--teal-light); color: var(--teal); }
+
+/* QUARTER TABS */
+.quarter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.q-tab {
+  flex: 1;
+  padding: 0.75rem;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--grey);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.q-tab:hover { border-color: var(--navy); color: var(--navy); }
+.q-tab.active { background: var(--navy); color: white; }
+
+.q-content { display: none; }
+.q-content.active { display: block; }
+
+/* AD COPY CARD */
+.ad-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.ad-card-header {
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ad-card-body { padding: 1.25rem; }
+
+.copy-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--grey);
+  margin-bottom: 0.3rem;
+}
+
+.copy-text {
+  font-size: 0.9rem;
+  color: var(--dark);
+  background: var(--off-white);
+  padding: 0.6rem 0.85rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.headline-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.hl-pill {
+  background: var(--light-blue);
+  color: var(--navy);
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.hl-pill.new { background: var(--yellow); color: var(--orange); }
+
+/* BUDGET VISUAL */
+.budget-bar-wrap { margin-bottom: 1.5rem; }
+
+.budget-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.budget-label {
+  font-size: 0.82rem;
+  color: var(--dark);
+  width: 220px;
+  flex-shrink: 0;
+}
+
+.budget-bar-bg {
+  flex: 1;
+  background: var(--light-grey);
+  border-radius: 20px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.budget-bar-fill {
+  height: 100%;
+  border-radius: 20px;
+  transition: width 0.8s ease;
+}
+
+.budget-val {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--dark);
+  width: 70px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* NEXT STEPS */
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media(max-width: 700px) { .steps-grid { grid-template-columns: 1fr; } }
+
+.step-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  background: var(--off-white);
+  font-size: 0.85rem;
+}
+
+.step-icon { font-size: 1rem; flex-shrink: 0; }
+
+/* FOOTER */
+footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.78rem;
+  margin-top: 3rem;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section.active { animation: fadeIn 0.3s ease; }
+
+/* CPL CHART */
+.cpl-chart {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 1.5rem;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.4rem;
+  height: 160px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.chart-bar-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.chart-bar {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  background: var(--blue);
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.chart-bar:hover { background: var(--navy); }
+
+.chart-bar-val {
+  font-size: 0.6rem;
+  color: var(--grey);
+  text-align: center;
+}
+
+.chart-labels {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.chart-label {
+  flex: 1;
+  text-align: center;
+  font-size: 0.6rem;
+  color: var(--grey);
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 1.5rem 0;
+}
+
+/* CAMPAIGN STRUCTURE */
+.campaign-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media(max-width: 800px) { .campaign-flow { grid-template-columns: repeat(2, 1fr); } }
+
+.camp-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.camp-card-head {
+  padding: 0.85rem 1rem;
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.camp-num {
+  width: 24px;
+  height: 24px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.camp-card-body {
+  background: white;
+  padding: 1rem;
+}
+
+.camp-detail {
+  margin-bottom: 0.6rem;
+}
+
+.camp-detail-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--grey);
+  margin-bottom: 0.15rem;
+}
+
+.camp-detail-val {
+  font-size: 0.82rem;
+  color: var(--dark);
+}
+
+.new-badge {
+  display: inline-block;
+  background: var(--orange);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-top: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">ASHCROFT <span>·</span> 2026</div>
+  <div class="nav-tabs">
+    <div class="nav-tab active" onclick="showSection('overview')">Overview</div>
+    <div class="nav-tab" onclick="showSection('google')">Google</div>
+    <div class="nav-tab" onclick="showSection('meta')">Meta</div>
+    <div class="nav-tab" onclick="showSection('bing')">Bing</div>
+    <div class="nav-tab" onclick="showSection('creative')">Creative Brief</div>
+    <div class="nav-tab" onclick="showSection('adcopy')">Ad Copy</div>
+    <div class="nav-tab" onclick="showSection('calendar')">Calendar</div>
+    <div class="nav-tab" onclick="showSection('nextsteps')">Next Steps</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Confidential · For Client Review</div>
+  <h1>2026 Ad Strategy<br>& Creative Brief</h1>
+  <p>Google Ads · Meta Ads · Bing Ads · Based on 3-Year Data Analysis (Apr 2023 – Apr 2026)</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-val">11,672</span>
+      <span class="hero-stat-label">Google Conversions</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-val">$13.82</span>
+      <span class="hero-stat-label">Avg Google CPL</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-val">$385K+</span>
+      <span class="hero-stat-label">Conv. Value</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-val">534</span>
+      <span class="hero-stat-label">Bing Conv.</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-val">174</span>
+      <span class="hero-stat-label">Meta Leads</span>
+    </div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="section active" id="overview">
+  <div class="section-title">3-Year Account Snapshot</div>
+  <div class="section-sub">April 2023 – April 2026 · All channels combined</div>
+
+  <div class="stat-row">
+    <div class="stat-box navy">
+      <span class="stat-val">11,672</span>
+      <div class="stat-label">Google Conversions</div>
+    </div>
+    <div class="stat-box navy">
+      <span class="stat-val">$13.82</span>
+      <div class="stat-label">Avg Google CPL</div>
+    </div>
+    <div class="stat-box green">
+      <span class="stat-val">$385K+</span>
+      <div class="stat-label">Google Conv. Value</div>
+    </div>
+    <div class="stat-box teal">
+      <span class="stat-val">534</span>
+      <div class="stat-label">Bing Conversions</div>
+    </div>
+    <div class="stat-box meta">
+      <span class="stat-val">174</span>
+      <div class="stat-label">Meta Leads</div>
+    </div>
+    <div class="stat-box orange">
+      <span class="stat-val">86,936</span>
+      <div class="stat-label">Meta Video ThruPlays</div>
+    </div>
+  </div>
+
+  <div class="alert info">
+    <div class="alert-icon">★</div>
+    <div><strong>Google is the #1 lead driver</strong> — Brand Search alone generated 6,572 conversions at $9.64 CPL over 3 years. CPL improved consistently every quarter.</div>
+  </div>
+
+  <div class="section-title" style="margin-bottom:0.3rem">CPL Improvement Journey — Google</div>
+  <div class="section-sub">Cost per Lead dropped consistently as campaigns matured</div>
+
+  <div class="cpl-chart">
+    <div class="chart-bars" id="cplBars"></div>
+    <div class="chart-labels" id="cplLabels"></div>
+  </div>
+
+  <div class="two-col">
+    <div class="info-block navy">
+      <h3>★ Campaign Performance Summary</h3>
+      <ul>
+        <li><strong>Google Brand Search:</strong> $9.64 avg CPL · 6,572 conv. · 9%+ conv. rate</li>
+        <li><strong>Google PMax:</strong> $7.88 avg CPL · 3,549 conv. · best quarter $6.48</li>
+        <li><strong>Google General Terms:</strong> CPL dropped 96% over 3 years ($380 → $14.74)</li>
+        <li><strong>Bing Brand Search:</strong> $21.05 avg CPL · 534 conv. · 16 'Excellent' ads</li>
+        <li><strong>Meta (Lifetime):</strong> 174 leads · $53.58 blended CPL</li>
+      </ul>
+    </div>
+    <div class="info-block orange">
+      <h3>⚠ Key Issues to Fix</h3>
+      <ul>
+        <li>All Google RSAs rated <strong>'Average'</strong> — 0 rated 'Excellent' in 3 years</li>
+        <li>Thermocouple keyword: $563 CPL — <strong>$14,051 wasted</strong></li>
+        <li>Meta retargeting got <strong>26 impressions</strong> in March (CBO starvation)</li>
+        <li>PMax has only <strong>1 asset group</strong> — major scaling opportunity missed</li>
+        <li>Bing RTD Sensor: <strong>Quality Score = 0</strong> — needs immediate fix</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- GOOGLE -->
+<div class="section" id="google">
+  <div class="section-title">Google Ads Strategy</div>
+  <div class="section-sub">Brand Search · General Terms · Performance Max · Discovery Remarketing</div>
+
+  <div class="channel-tabs">
+    <div class="ch-tab google active" onclick="showChannel('g','brand',this)">Brand Search ★</div>
+    <div class="ch-tab google" onclick="showChannel('g','general',this)">General Terms</div>
+    <div class="ch-tab google" onclick="showChannel('g','pmax',this)">Performance Max</div>
+    <div class="ch-tab google" onclick="showChannel('g','disc',this)">Discovery Remarketing</div>
+  </div>
+
+  <!-- Brand -->
+  <div class="ch-content g active" id="g-brand">
+    <div class="stat-row">
+      <div class="stat-box navy"><span class="stat-val">$15.42</span><div class="stat-label">Avg CPL · 3 Years</div></div>
+      <div class="stat-box navy"><span class="stat-val">9.13%</span><div class="stat-label">Avg Conv. Rate</div></div>
+      <div class="stat-box green"><span class="stat-val">6,572</span><div class="stat-label">Total Conversions</div></div>
+      <div class="stat-box green"><span class="stat-val">$387K</span><div class="stat-label">Conv. Value</div></div>
+    </div>
+    <div class="alert warning">
+      <div class="alert-icon">⚠</div>
+      <div><strong>#1 Priority:</strong> All Google RSAs rated 'Average' — 0 rated 'Excellent' in 3 years. Bing's identical ads are 'Excellent'. Adding 5+ unique headlines to each RSA could reduce CPL by 15–25%.</div>
+    </div>
+    <div class="two-col">
+      <div class="info-block navy">
+        <h3>★ Best Proven RSA Combo</h3>
+        <p><strong>H1:</strong> Ashcroft Temperature Solutions</p>
+        <p><strong>H2:</strong> Ashcroft® Pressure Instruments</p>
+        <p><strong>H3:</strong> Pressure & Temperature Experts</p>
+        <p style="margin-top:0.75rem; color:var(--green); font-weight:600;">→ $10.14 CPL — best combo in 3 years</p>
+        <div class="divider"></div>
+        <p><strong>Best Descriptions (keep both):</strong></p>
+        <p style="margin-top:0.35rem; font-style:italic; font-size:0.82rem;">'Over 170 Years in Providing Trusted Pressure & Temperature Instruments by Ashcroft®.'</p>
+        <p style="margin-top:0.35rem; font-style:italic; font-size:0.82rem;">'Keep Critical Equipment and Processes Running With Confidence. Contact Ashcroft® Today.'</p>
+      </div>
+      <div class="info-block orange">
+        <h3>New Headlines to Add (reach 'Excellent')</h3>
+        <p>• 'Get a Quote in 24 Hours'</p>
+        <p>• 'Trusted Since 1852'</p>
+        <p>• 'Request a Free Datasheet Today'</p>
+        <p>• 'Trusted by Engineers in 100+ Countries'</p>
+        <p>• 'Ashcroft® — Pioneer Since 1852'</p>
+        <div class="divider"></div>
+        <h3>Top Ad Groups (3 Years)</h3>
+        <p>Pressure Gauges: 2,919 conv. · $11.37 CPL (#1)</p>
+        <p>Ashcroft Brand: 2,503 conv. · $6.90 CPL (best eff.)</p>
+        <p>Temp. Measurement: 39 conv. · $11.06 CPL</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- General Terms -->
+  <div class="ch-content g" id="g-general">
+    <div class="alert success">
+      <div class="alert-icon">★</div>
+      <div><strong>Most Improved Campaign:</strong> CPL dropped 96% over 3 years — from $608 (Q2 2023) to $23.58 (Q2 2025). Now near Brand-level efficiency.</div>
+    </div>
+    <div class="two-col">
+      <div class="info-block green">
+        <h3>★ Best RSA Combo (despite 'Poor' rating!)</h3>
+        <p><strong>H1:</strong> Reliable Pressure Gauge</p>
+        <p><strong>H2:</strong> Stainless Steel Design Gauge</p>
+        <p><strong>H3:</strong> Gauges For Harsh Environments</p>
+        <p style="margin-top:0.75rem; color:var(--green); font-weight:600;">→ $23.25 CPL — upgrading to 'Excellent' could push below $18</p>
+        <div class="divider"></div>
+        <h3>💎 Hidden Gem Keywords to Scale</h3>
+        <p>'sanitary gauge' → $11.04 CPL, only $70 spent in 3 yrs!</p>
+        <p>'8008S' → $12.70 CPL, only $68 spent!</p>
+        <p>Keep misspelling 'ashcroft pressure guage' → #1 volume keyword (2,579 conv.)</p>
+      </div>
+      <div class="info-block red">
+        <h3>🚫 Keywords to Pause Immediately</h3>
+        <p>'thermocouple' phrase → $563 CPL · <strong>$14,051 wasted</strong></p>
+        <p>'pressure sensor' broad → $158 CPL</p>
+        <p>'industrial rtd' → $164 CPL · $924 wasted</p>
+        <p>'pressure transmitter' → 0 conversions</p>
+        <p>'pressure transducer' general → 0 conversions</p>
+        <div class="divider"></div>
+        <h3>New Ad Groups to Create</h3>
+        <p>→ Sanitary / High-Purity (CPL target: under $10)</p>
+        <p>→ OEM / Manufacturing (CPL target: under $15)</p>
+        <p>→ $18,534 in uncaptured impression share available</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PMax -->
+  <div class="ch-content g" id="g-pmax">
+    <div class="stat-row">
+      <div class="stat-box green"><span class="stat-val">$12.61</span><div class="stat-label">Avg CPL</div></div>
+      <div class="stat-box green"><span class="stat-val">$10.37</span><div class="stat-label">Best Quarter CPL</div></div>
+      <div class="stat-box navy"><span class="stat-val">3,549</span><div class="stat-label">Total Conversions</div></div>
+      <div class="stat-box navy"><span class="stat-val">3.1x</span><div class="stat-label">Return on Ad Spend</div></div>
+    </div>
+    <div class="alert warning">
+      <div class="alert-icon">⚠</div>
+      <div><strong>Critical Gap:</strong> Only 1 asset group ('Pmax - Brand') for all 3,549 conversions. Adding product-specific asset groups is a major scaling opportunity.</div>
+    </div>
+    <div class="two-col">
+      <div class="info-block green">
+        <h3>New Asset Groups to Add</h3>
+        <p><strong>Asset Group 2 — Pressure Gauges:</strong></p>
+        <p style="font-size:0.82rem; margin-left:0.5rem;">'Industrial Pressure Gauges' · '8008S — Industry Standard' · 'ASME Certified Gauges' · 'Gauges for Harsh Environments' · 'Sanitary Pressure Gauges'</p>
+        <div class="divider"></div>
+        <p><strong>Asset Group 3 — Pressure Sensors:</strong></p>
+        <p style="font-size:0.82rem; margin-left:0.5rem;">'E2 Series Pressure Transducer' · 'High Purity Pressure Sensors' · 'OEM Pressure Transducers' · 'S1 Pressure Transducer'</p>
+      </div>
+      <div class="info-block navy">
+        <h3>New Headlines to Add (Brand Group)</h3>
+        <p>• 'Rugged Sensors for Industrial Environments'</p>
+        <p>• 'Trusted Since 1852'</p>
+        <p>• 'Request a Custom Quote Today'</p>
+        <p>• '170+ Years of Engineering Expertise'</p>
+        <p>• 'Same-Day Quote for Standard Products'</p>
+        <div class="divider"></div>
+        <h3>New Long Headlines</h3>
+        <p style="font-size:0.82rem; font-style:italic;">'Industrial Pressure & Temperature Instruments Built for the Harshest Applications — Since 1852'</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Discovery -->
+  <div class="ch-content g" id="g-disc">
+    <div class="alert info">
+      <div class="alert-icon">ℹ</div>
+      <div><strong>Monitor Only — Do Not Scale.</strong> $225.60 CPL · 45 conversions in 3 years. Keep current budget and copy. 'Avoid Equipment Failure' angle is correct for warm audiences.</div>
+    </div>
+    <div class="info-block orange">
+      <h3>Current Headlines (keep)</h3>
+      <p>• 'Avoid Equipment Failure with Ashcroft®'</p>
+      <p>• 'Keep Key Equipment & Processes Running'</p>
+      <p>• 'Quality Gauges, Transmitters, and More'</p>
+      <div class="divider"></div>
+      <h3>Current Descriptions (keep)</h3>
+      <p style="font-style:italic; font-size:0.85rem;">'Avoid Equipment Failure with the Right Pressure and Temperature Instruments by Ashcroft®.'</p>
+      <p style="font-style:italic; font-size:0.85rem; margin-top:0.35rem;">"Don't Let Unreliable Instruments Disrupt Your Business. Find the Right Solutions."</p>
+    </div>
+  </div>
+</div>
+
+<!-- META -->
+<div class="section" id="meta">
+  <div class="section-title">Meta Ads Strategy</div>
+  <div class="section-sub">New 3-campaign structure · April 2026 · Budget: $1,503.36/mo total</div>
+
+  <div class="alert warning">
+    <div class="alert-icon">⚠</div>
+    <div><strong>Current Problem Fixed:</strong> All 3 ad sets (Broad, Lookalike, Retargeting) were sharing ONE CBO campaign. Retargeting received only 26 impressions in March — starved of budget. Now split into 3 separate campaigns with dedicated budgets.</div>
+  </div>
+
+  <div class="campaign-flow">
+    <div class="camp-card">
+      <div class="camp-card-head" style="background:var(--meta)">
+        <div class="camp-num">1</div>Prospecting — Broad
+      </div>
+      <div class="camp-card-body">
+        <div class="camp-detail">
+          <div class="camp-detail-label">Audience</div>
+          <div class="camp-detail-val">US + Canada · No custom audiences · Let Meta find best users</div>
+        </div>
+        <div class="camp-detail">
+          <div class="camp-detail-label">Budget</div>
+          <div class="camp-detail-val">$219.59/mo · $7.32/day</div>
+        </div>
+        <div class="camp-detail">
+          <div class="camp-detail-label">CTA</div>
+          <div class="camp-detail-val">Learn More</div>
+        </div>
+        <div class="camp-detail">
+          <div class="camp-detail-label">Exclude</div>
+          <div class="camp-detail-val">All website visitors + all lookalike audiences</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="camp-card">
+      <div class="camp-card-head" style="background:#4267B2">
+        <div class="camp-num">2</div>Prospecting — Lookalike
+      </div>
+      <div class="camp-card-body">
+        <div class="camp-detail">
+          <div class="camp-detail-label">Include</div>
+          <div class="camp-detail-val">Lookalike CA/US 1% (30+60 days) + Lookalike FB engagers + Lookalike video viewers</div>
+        </div>
+        <div class="camp-detail">
+          <div class="camp-detail-label">Budget</div>
+          <div class="camp-detail-val">$481.70/mo · $16.06/day</div>
+        </div>
+        <div class="camp-detail">
+          <div class="camp-detail-label">CTA</div>
+          <div class="camp-detail-val">Learn More</div>
+        </div>
+        <div class="camp-detail">
+          <div class="camp-detail-label">Exclude</div>
+          <div class="camp-detail-val">Website visitors last 30/60/90 days</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="camp-card">
+      <div class="camp-card-head" style="background:var(--orange)">
+        <div class="camp-num">3</div>Retargeting
+        <div class="new-badge">NEW</div>
+      </div>
+      <div class="camp-card-body">
+        <div class="camp-detail">
+          <div class="camp-detail-label">Include</div>
+          <div class="camp-detail-val">Website visitors 180 days + FB engagers 365d + Instagram 365d + Video viewers 365d</div>
+        </div>
+        <div class="camp-detail">
+          <div class="camp-detail-label">Budget</div>
+          <div class="camp-detail-val">$802.07/mo · $26.74/day</div>
+        </div>
+        <div class="camp-detail">
+          <div class="camp-detail-label">CTA</div>
+          <div class="camp-detail-val" style="color:var(--orange); font-weight:600;">Get Quote Now ★</div>
+        </div>
+        <div class="camp-detail">
+          <div class="camp-detail-label">Exclude</div>
+          <div class="camp-detail-val">All 6 lookalike audiences</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="camp-card">
+      <div class="camp-card-head" style="background:var(--teal)">
+        <div class="camp-num">4</div>Video Engagement
+      </div>
+      <div class="camp-card-body">
+        <div class="camp-detail">
+          <div class="camp-detail-label">Purpose</div>
+          <div class="camp-detail-val">Brand awareness · Builds retargeting audience pool</div>
+        </div>
+        <div class="camp-detail">
+          <div class="camp-detail-label">Budget</div>
+          <div class="camp-detail-val">$160.00/mo · $5.33/day</div>
+        </div>
+        <div class="camp-detail">
+          <div class="camp-detail-label">Performance</div>
+          <div class="camp-detail-val" style="color:var(--green);">$0.02/ThruPlay · 86,936 ThruPlays</div>
+        </div>
+        <div class="camp-detail">
+          <div class="camp-detail-label">Action</div>
+          <div class="camp-detail-val">Keep as-is · No changes needed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title" style="font-size:1.2rem; margin-bottom:0.5rem">Pending Client Approval — New Meta Ads</div>
+  <div class="two-col">
+    <div class="info-block orange">
+      <h3>⏳ Heritage Trust Ad (Broad/Lookalike)</h3>
+      <p style="font-style:italic; margin-bottom:0.5rem;">"Since 1852, Ashcroft has been the trusted name in pressure and temperature measurement. 170+ years of engineering expertise — built into every product."</p>
+      <p><strong>Headline:</strong> '170 Years of Industrial Measurement Expertise'</p>
+      <p style="margin-top:0.35rem; font-size:0.8rem; color:var(--grey);">Why: '170 Years' = #1 proven Google Brand description. Not yet in Meta.</p>
+    </div>
+    <div class="info-block orange">
+      <h3>⏳ Pressure Gauge Hero — 8008S</h3>
+      <p style="font-style:italic; margin-bottom:0.5rem;">"For over 170 years, the Ashcroft 8008S has been the industry standard in pressure measurement. Built to ASME B40.100 — the choice of engineers who can't afford to be wrong."</p>
+      <p><strong>Headline:</strong> 'Industry Standard Pressure Gauges — Since 1852'</p>
+      <p style="margin-top:0.35rem; font-size:0.8rem; color:var(--grey);">Why: Pressure Gauges = #1 Google converter (2,919 conv.) — not yet on Meta.</p>
+    </div>
+    <div class="info-block orange">
+      <h3>⏳ Retargeting — Direct Response Ads (3x)</h3>
+      <p style="font-style:italic; margin-bottom:0.5rem;">"You explored Ashcroft's solutions. Ready to get a custom quote? Our engineering team responds within 24 hours."</p>
+      <p><strong>Headline:</strong> 'Request a Custom Quote — 24-Hour Response'</p>
+      <p><strong>CTA:</strong> Get Quote Now</p>
+    </div>
+    <div class="info-block meta">
+      <h3>⏳ Hydrogen Campaign (Reactivate)</h3>
+      <p style="font-style:italic; margin-bottom:0.5rem;">"Drive efficiency in hydrogen energy solutions with Ashcroft's reliable pressure and temperature measurement solutions."</p>
+      <p><strong>Headline:</strong> 'Reliable Solutions for Hydrogen'</p>
+      <p style="margin-top:0.35rem; font-size:0.8rem; color:var(--grey);">Why: Previous Hydrogen campaign generated 87 leads — proven angle worth reactivating.</p>
+    </div>
+  </div>
+</div>
+
+<!-- BING -->
+<div class="section" id="bing">
+  <div class="section-title">Bing Ads Strategy</div>
+  <div class="section-sub">534 conversions · $21.05 avg CPL · 16 'Excellent' rated ads · Budget: $400/mo</div>
+
+  <div class="stat-row">
+    <div class="stat-box teal"><span class="stat-val">534</span><div class="stat-label">Total Conv. 3 Years</div></div>
+    <div class="stat-box teal"><span class="stat-val">$21.05</span><div class="stat-label">Avg CPL</div></div>
+    <div class="stat-box teal"><span class="stat-val">16</span><div class="stat-label">Ads Rated 'Excellent'</div></div>
+    <div class="stat-box orange"><span class="stat-val">$400</span><div class="stat-label">New Budget/mo</div></div>
+  </div>
+
+  <div class="alert success">
+    <div class="alert-icon">★</div>
+    <div><strong>Key Insight:</strong> Bing's 'Excellent' ads use the EXACT SAME headlines as Google's top converters — but Google rates them 'Average'. Use Bing's proven combos as the blueprint to fix Google RSA ad strength.</div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-title" style="background:var(--teal)">Bing Ad Group Performance (3 Years)</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Ad Group</th>
+          <th>Conversions</th>
+          <th>CPL</th>
+          <th>Quality Score</th>
+          <th>Ad Strength</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Pressure Gauges</td><td>157</td><td>$28.27</td><td>8/10</td><td><span class="badge teal">Excellent</span></td><td>✅ Keep</td></tr>
+        <tr><td>Pressure Transmitter</td><td>107</td><td>$43.78</td><td>6/10</td><td><span class="badge teal">Excellent</span></td><td>✅ Keep · fix collision</td></tr>
+        <tr><td><strong>Temp. Measurement ★</strong></td><td><strong>90</strong></td><td><strong>$15.65</strong></td><td>7/10</td><td><span class="badge teal">Excellent</span></td><td><strong>✅ Best efficiency</strong></td></tr>
+        <tr><td>Ashcroft Brand</td><td>68</td><td>$28.14</td><td>10/10</td><td><span class="badge teal">Excellent</span></td><td>✅ Keep</td></tr>
+        <tr><td>Pressure Transducer</td><td>49</td><td>$31.04</td><td>10/10</td><td><span class="badge teal">Excellent</span></td><td>✅ Keep</td></tr>
+        <tr><td>RTD Sensor</td><td>24</td><td>$78.32</td><td>0/10</td><td><span class="badge blue">Good</span></td><td><span class="badge orange">⚠ Fix QS=0</span></td></tr>
+        <tr><td>Thermowell</td><td>4</td><td>$120.54</td><td>10/10</td><td><span class="badge blue">Good</span></td><td><span class="badge red">Consider Pause</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="two-col">
+    <div class="info-block teal">
+      <h3>Actions Needed (No Approval Required)</h3>
+      <p>• Fix keyword collision: 'ashcroft pressure transmitter' triggering 2 ad groups</p>
+      <p>• Add negative keywords: 'ashcroft everest decanter', 'ashcroft industrial tools'</p>
+      <p>• Fix RTD Sensor QS=0 — check landing page URL relevance</p>
+      <p>• Budget: Keep at $400/mo (proven ~12 leads/month at $33.68 CPL)</p>
+    </div>
+    <div class="info-block navy">
+      <h3>★ Top Bing Copy — Apply to Google RSAs</h3>
+      <p><strong>Pressure Gauges (Excellent · $28.27 CPL):</strong></p>
+      <p style="font-size:0.82rem;">H1: Ashcroft® Pressure Experts · H2: Ashcroft® Pressure Gauges · H3: Pressure Solution Experts</p>
+      <p style="font-size:0.82rem; font-style:italic; margin-top:0.25rem;">'Over 170 Years in Providing Industry Standard Pressure Gauges. Contact Ashcroft® Today.'</p>
+      <div class="divider"></div>
+      <p><strong>Temp. Measurement (Excellent · $15.65 CPL ★):</strong></p>
+      <p style="font-size:0.82rem;">H1: Ashcroft® Temperature Experts · H2: Ashcroft® Temperature Products · H3: Temperature Solution Experts</p>
+    </div>
+  </div>
+</div>
+
+<!-- CREATIVE BRIEF -->
+<div class="section" id="creative">
+  <div class="section-title">Creative Brief</div>
+  <div class="section-sub">Recommended ad angles, ICP, and messaging direction per channel · 2026</div>
+
+  <div class="channel-tabs">
+    <div class="ch-tab google active" onclick="showChannel('cb','google',this)">Google</div>
+    <div class="ch-tab meta" onclick="showChannel('cb','meta',this)">Meta</div>
+    <div class="ch-tab bing" onclick="showChannel('cb','bing',this)">Bing</div>
+  </div>
+
+  <div class="ch-content cb active" id="cb-google">
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-header" style="background:var(--navy)">Brand Search · RSA</div>
+        <div class="card-body">
+          <p class="copy-label">Angle</p>
+          <p style="font-weight:600; color:var(--navy); margin-bottom:0.75rem;">Brand Authority + 170-Year Heritage</p>
+          <p class="copy-label">ICP</p>
+          <p style="font-size:0.84rem; margin-bottom:0.75rem;">Engineers & procurement managers searching Ashcroft by name. Highest intent. 9%+ conv. rate.</p>
+          <p class="copy-label">Best Combo</p>
+          <p style="font-size:0.84rem; font-style:italic;">'Ashcroft Temperature Solutions' + 'Ashcroft® Pressure Instruments' + 'Pressure & Temperature Experts' → $10.14 CPL</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" style="background:var(--blue)">General Terms · RSA</div>
+        <div class="card-body">
+          <p class="copy-label">Angle</p>
+          <p style="font-weight:600; color:var(--blue); margin-bottom:0.75rem;">Application Specificity + Problem/Solution</p>
+          <p class="copy-label">ICP</p>
+          <p style="font-size:0.84rem; margin-bottom:0.75rem;">Engineers searching by category (not brand). Evaluating multiple vendors. CPL dropped 96% in 3 years.</p>
+          <p class="copy-label">Best Combo</p>
+          <p style="font-size:0.84rem; font-style:italic;">'Reliable Pressure Gauge' + 'Stainless Steel Design Gauge' + 'Gauges For Harsh Environments' → $23.25 CPL</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" style="background:var(--green)">Performance Max · Multi-Format</div>
+        <div class="card-body">
+          <p class="copy-label">Angle</p>
+          <p style="font-weight:600; color:var(--green); margin-bottom:0.75rem;">Brand Story + Product-Specific Asset Groups</p>
+          <p class="copy-label">ICP</p>
+          <p style="font-size:0.84rem; margin-bottom:0.75rem;">Broad industrial audience. Google AI finds best users. $7.88 avg CPL · 3.1x ROAS.</p>
+          <p class="copy-label">Action</p>
+          <p style="font-size:0.84rem;">Add Pressure Gauges + Pressure Sensors asset groups. Add new headlines to improve from 'Average' to 'Excellent'.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" style="background:var(--orange)">Discovery Remarketing · Image</div>
+        <div class="card-body">
+          <p class="copy-label">Angle</p>
+          <p style="font-weight:600; color:var(--orange); margin-bottom:0.75rem;">Equipment Failure Prevention</p>
+          <p class="copy-label">ICP</p>
+          <p style="font-size:0.84rem; margin-bottom:0.75rem;">Past website visitors. Warm but passive. $225.60 CPL — monitor only, do not scale.</p>
+          <p class="copy-label">Keep Current</p>
+          <p style="font-size:0.84rem; font-style:italic;">'Avoid Equipment Failure with Ashcroft®' — correct angle, no changes needed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ch-content cb" id="cb-meta">
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-header" style="background:var(--meta)">Broad · Static/Carousel ✅ Running</div>
+        <div class="card-body">
+          <p class="copy-label">Angle</p>
+          <p style="font-weight:600; color:var(--meta); margin-bottom:0.75rem;">Rugged Reliability (3 ads running)</p>
+          <p class="copy-label">Primary Text</p>
+          <p style="font-size:0.84rem; font-style:italic; margin-bottom:0.5rem;">"Rugged. Reliable. Ready for Anything. Ashcroft's trusted pressure sensors are built to perform in the harshest industrial environments."</p>
+          <p class="copy-label">CTA</p>
+          <p style="font-size:0.84rem;">Learn More · Keep all 3 current ads as-is</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" style="background:#4267B2">Lookalike · Product-Specific ✅ Running</div>
+        <div class="card-body">
+          <p class="copy-label">Angle</p>
+          <p style="font-weight:600; color:#4267B2; margin-bottom:0.75rem;">Engineering Expertise per Product</p>
+          <p class="copy-label">Current Ads</p>
+          <p style="font-size:0.84rem; margin-bottom:0.5rem;">E2 Transducer · G2 Transducer · ZT12/ZX12 · S1 OEM — all running</p>
+          <p class="copy-label">CTA</p>
+          <p style="font-size:0.84rem;">Learn More · Keep all 4 product ads as-is</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" style="background:var(--orange)">Retargeting · Static ⏳ New</div>
+        <div class="card-body">
+          <p class="copy-label">Angle</p>
+          <p style="font-weight:600; color:var(--orange); margin-bottom:0.75rem;">Direct Response — Get Quote Now</p>
+          <p class="copy-label">Primary Text</p>
+          <p style="font-size:0.84rem; font-style:italic; margin-bottom:0.5rem;">"You explored Ashcroft's solutions. Ready to get a custom quote? Our engineering team responds within 24 hours."</p>
+          <p class="copy-label">CTA</p>
+          <p style="font-size:0.84rem; color:var(--orange); font-weight:600;">Get Quote Now ★ (changed from Learn More)</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" style="background:var(--teal)">Video Engagement ✅ Running</div>
+        <div class="card-body">
+          <p class="copy-label">Purpose</p>
+          <p style="font-weight:600; color:var(--teal); margin-bottom:0.75rem;">Brand Awareness + Retargeting Pool</p>
+          <p class="copy-label">Performance</p>
+          <p style="font-size:0.84rem; margin-bottom:0.5rem;">$0.02/ThruPlay · 86,936 views · $5.33/day budget</p>
+          <p class="copy-label">Action</p>
+          <p style="font-size:0.84rem;">Keep as-is. No copy changes. Budget reduced to $5.33/day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ch-content cb" id="cb-bing">
+    <div class="info-block teal">
+      <h3>Bing Creative Strategy — Use as Google Blueprint</h3>
+      <p>Bing's 16 'Excellent' rated ads use the same headlines as Google's top-converting RSAs. Copy these combinations directly into Google to improve ad strength from 'Average' to 'Excellent'.</p>
+      <div class="divider"></div>
+      <p><strong>Temperature Measurement (Best: $15.65 CPL · Excellent):</strong></p>
+      <p style="font-size:0.85rem; margin-left:0.5rem;">H1: Ashcroft® Temperature Experts · H2: Ashcroft® Temperature Products · H3: Temperature Solution Experts</p>
+      <p style="font-size:0.85rem; font-style:italic; margin-left:0.5rem; margin-top:0.25rem;">'Accurate & Dependable Thermometers. Contact an Ashcroft® Expert to Find the Right Fit.'</p>
+    </div>
+  </div>
+</div>
+
+<!-- AD COPY -->
+<div class="section" id="adcopy">
+  <div class="section-title">Ad Copy Recommendations</div>
+  <div class="section-sub">Proven copy to keep ✅ · New headlines to test ⏳ · Full copy in Ad Copy xlsx file</div>
+
+  <div class="channel-tabs">
+    <div class="ch-tab google active" onclick="showChannel('ac','brand',this)">Google Brand</div>
+    <div class="ch-tab google" onclick="showChannel('ac','general2',this)">General Terms</div>
+    <div class="ch-tab meta" onclick="showChannel('ac','metacopy',this)">Meta</div>
+  </div>
+
+  <div class="ch-content ac active" id="ac-brand">
+    <div class="ad-card">
+      <div class="ad-card-header" style="background:var(--navy); color:white; border-radius:0">
+        <span style="font-weight:600;">Ashcroft Brand Ad Group · $10.14 CPL · #1 Proven Combo</span>
+        <span class="badge" style="background:rgba(255,255,255,0.2); color:white;">9.13% Conv. Rate</span>
+      </div>
+      <div class="ad-card-body">
+        <p class="copy-label">★ Proven Headline Combo (keep)</p>
+        <div class="headline-row">
+          <div class="hl-pill">Ashcroft Temperature Solutions</div>
+          <div class="hl-pill">Ashcroft® Pressure Instruments</div>
+          <div class="hl-pill">Pressure & Temperature Experts</div>
+        </div>
+        <p class="copy-label">New Headlines to Add</p>
+        <div class="headline-row">
+          <div class="hl-pill new">Get a Quote in 24 Hours</div>
+          <div class="hl-pill new">Trusted Since 1852</div>
+          <div class="hl-pill new">Request a Free Datasheet</div>
+          <div class="hl-pill new">100+ Countries Trust Ashcroft®</div>
+        </div>
+        <p class="copy-label">★ Proven Descriptions (keep both)</p>
+        <div class="copy-text">'Over 170 Years in Providing Trusted Pressure & Temperature Instruments by Ashcroft®.'</div>
+        <div class="copy-text">'Keep Critical Equipment and Processes Running With Confidence. Contact Ashcroft® Today.'</div>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header" style="background:var(--navy); color:white; border-radius:0">
+        <span style="font-weight:600;">Pressure Gauges Ad Group · $18.19 CPL · #1 Ad Group</span>
+        <span class="badge" style="background:rgba(255,255,255,0.2); color:white;">2,919 Conv.</span>
+      </div>
+      <div class="ad-card-body">
+        <p class="copy-label">★ Proven Combo</p>
+        <div class="headline-row">
+          <div class="hl-pill">Ashcroft® Pressure Experts</div>
+          <div class="hl-pill">Ashcroft® Pressure Gauges</div>
+          <div class="hl-pill">Pressure Solution Experts</div>
+        </div>
+        <p class="copy-label">New Headlines to Add</p>
+        <div class="headline-row">
+          <div class="hl-pill new">ASME B40.100 Certified Gauges</div>
+          <div class="hl-pill new">Sanitary Pressure Gauges</div>
+          <div class="hl-pill new">Request a Datasheet Today</div>
+        </div>
+        <p class="copy-label">★ Proven Description</p>
+        <div class="copy-text">'Over 170 Years in Providing Industry Standard Pressure Gauges. Contact Ashcroft® Today.'</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ch-content ac" id="ac-general2">
+    <div class="ad-card">
+      <div class="ad-card-header" style="background:var(--blue); color:white; border-radius:0">
+        <span style="font-weight:600;">Pressure Gauges (General Terms) · $23.25 CPL · Despite 'Poor' Rating!</span>
+      </div>
+      <div class="ad-card-body">
+        <p class="copy-label">★ Best Proven Combo (keep as anchor)</p>
+        <div class="headline-row">
+          <div class="hl-pill">Reliable Pressure Gauge</div>
+          <div class="hl-pill">Stainless Steel Design Gauge</div>
+          <div class="hl-pill">Gauges For Harsh Environments</div>
+        </div>
+        <p class="copy-label">New Headlines to Reach 'Excellent'</p>
+        <div class="headline-row">
+          <div class="hl-pill new">ASME B40.100 Certified Gauge</div>
+          <div class="hl-pill new">Sanitary Pressure Gauges</div>
+          <div class="hl-pill new">8008S Pressure Gauge</div>
+          <div class="hl-pill new">Get a Quote — Same Day</div>
+        </div>
+        <div class="alert danger" style="margin-top:1rem">
+          <div class="alert-icon">🚫</div>
+          <div><strong>Pause immediately:</strong> 'thermocouple' phrase match → $563 CPL, $14,051 wasted in 3 years. Also pause: 'industrial rtd' ($164 CPL), 'pressure transmitter' (0 conv.)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ch-content ac" id="ac-metacopy">
+    <div class="ad-card">
+      <div class="ad-card-header" style="background:var(--meta); color:white; border-radius:0">
+        <span style="font-weight:600;">Broad + Lookalike — Current Ads ✅ Keep Running</span>
+      </div>
+      <div class="ad-card-body">
+        <p class="copy-label">Ad 1 — Rugged Reliability (Static)</p>
+        <div class="copy-text">"Rugged. Reliable. Ready for Anything. Ashcroft's trusted pressure sensors are built to perform in the harshest industrial environments. Engineered for precision, durability, and peace of mind."</div>
+        <p class="copy-label">Headline</p>
+        <div class="headline-row"><div class="hl-pill">Reliable Pressure Sensors for Demanding Industries</div></div>
+        <div class="divider"></div>
+        <p class="copy-label">Ad 2 — CVD Tech Spec (Static)</p>
+        <div class="copy-text">"Ashcroft pressure sensors are engineered with field-proven Chemical Vapor Deposition (CVD) sensing technology — for durability, precision, and long-term stability."</div>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header" style="background:var(--orange); color:white; border-radius:0">
+        <span style="font-weight:600;">Retargeting — New Ads ⏳ Client Approval Required</span>
+        <span class="badge" style="background:rgba(255,255,255,0.2); color:white;">CTA: Get Quote Now</span>
+      </div>
+      <div class="ad-card-body">
+        <p class="copy-label">Ad 1 — Quote Request</p>
+        <div class="copy-text">"You explored Ashcroft's pressure and temperature solutions. Ready to get a custom quote for your application? Our engineering team responds within 24 hours."</div>
+        <div class="headline-row"><div class="hl-pill new">Request a Custom Quote — 24-Hour Response</div></div>
+        <div class="divider"></div>
+        <p class="copy-label">Ad 2 — Pain Avoidance</p>
+        <div class="copy-text">"Don't let unreliable pressure instruments disrupt your operations. Ashcroft sensors are built for the harshest environments — 170 years of engineering back every product."</div>
+        <div class="headline-row"><div class="hl-pill new">Avoid Equipment Failure — Get Ashcroft</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CALENDAR -->
+<div class="section" id="calendar">
+  <div class="section-title">2026 Content Calendar</div>
+  <div class="section-sub">✅ Live · 🔄 In Progress · ⏳ Planned · Client approval required for new creative</div>
+
+  <div class="quarter-tabs">
+    <div class="q-tab active" onclick="showQuarter('q1',this)">Q1 · Jan–Mar</div>
+    <div class="q-tab" onclick="showQuarter('q2a',this)">Q2 · April</div>
+    <div class="q-tab" onclick="showQuarter('q2b',this)">Q2 · May–Jun</div>
+    <div class="q-tab" onclick="showQuarter('q34',this)">Q3–Q4 · Jul–Dec</div>
+  </div>
+
+  <div class="q-content active" id="q1">
+    <div class="alert success"><div class="alert-icon">✅</div><div>All Q1 actions are live and running — no approval needed.</div></div>
+    <div class="steps-grid">
+      <div>
+        <div class="step-item"><div class="step-icon">✅</div><div>Keep all Google campaigns running — Brand, PMax, General Terms, Discovery</div></div>
+        <div class="step-item"><div class="step-icon">✅</div><div>Keep Meta Video Engagement running ($5.33/day — builds retargeting pool)</div></div>
+        <div class="step-item"><div class="step-icon">✅</div><div>Pause Thermocouple keyword ($563 CPL · $14,051 wasted in 3 years)</div></div>
+        <div class="step-item"><div class="step-icon">✅</div><div>Pause RTD + Transmitter General Terms keywords</div></div>
+      </div>
+      <div>
+        <div class="step-item"><div class="step-icon">✅</div><div>Add Bing negative keywords: 'ashcroft everest decanter', 'ashcroft industrial tools'</div></div>
+        <div class="step-item"><div class="step-icon">✅</div><div>Fix Bing RTD Sensor QS=0 — check landing page URL relevance</div></div>
+        <div class="step-item"><div class="step-icon">✅</div><div>Fix Bing keyword collision — 'ashcroft pressure transmitter' triggering 2 ad groups</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-content" id="q2a">
+    <div class="alert warning"><div class="alert-icon">🔄</div><div>April actions — Meta restructure in progress. No client approval needed for structural changes.</div></div>
+    <div class="steps-grid">
+      <div>
+        <div class="step-item"><div class="step-icon">🔄</div><div>Launch Meta Retargeting as dedicated campaign (split from CBO) — $26.74/day</div></div>
+        <div class="step-item"><div class="step-icon">🔄</div><div>Launch Meta Broad as dedicated campaign — $7.32/day</div></div>
+        <div class="step-item"><div class="step-icon">🔄</div><div>Launch Meta Lookalike as dedicated campaign — $16.06/day</div></div>
+        <div class="step-item"><div class="step-icon">🔄</div><div>Reduce Bing budget: $481.70 → $400/mo in Shape</div></div>
+      </div>
+      <div>
+        <div class="step-item"><div class="step-icon">⏳</div><div>Upgrade Google RSAs — add 5+ new headlines per ad group to reach 'Excellent'</div></div>
+        <div class="step-item"><div class="step-icon">⏳</div><div>Add Google PMax Asset Groups: Pressure Gauges + Pressure Sensors</div></div>
+        <div class="step-item"><div class="step-icon">⏳</div><div>Change Meta Retargeting CTA: 'Learn More' → 'Get Quote Now'</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-content" id="q2b">
+    <div class="alert info"><div class="alert-icon">⏳</div><div>May–June actions require client approval or client action (CRM export).</div></div>
+    <div class="steps-grid">
+      <div>
+        <div class="step-item"><div class="step-icon">⏳</div><div>Client provides CRM export → upload to Meta for Lookalike 1% + 2–3% + exclusion audience</div></div>
+        <div class="step-item"><div class="step-icon">⏳</div><div>New Meta ad: Heritage Trust — 'Since 1852' angle (pending approval)</div></div>
+        <div class="step-item"><div class="step-icon">⏳</div><div>New Meta ad: Pressure Gauge Hero — 8008S (pending approval)</div></div>
+      </div>
+      <div>
+        <div class="step-item"><div class="step-icon">⏳</div><div>Scale 'sanitary gauge' + '8008S' keyword bids — both under $13 CPL, massively underused</div></div>
+        <div class="step-item"><div class="step-icon">⏳</div><div>New General Terms ad groups: Sanitary/High-Purity + OEM/Manufacturing</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-content" id="q34">
+    <div class="steps-grid">
+      <div>
+        <div class="step-item"><div class="step-icon">⏳</div><div>Q3: Meta creative refresh — prevent ad fatigue (refresh every 6–8 weeks)</div></div>
+        <div class="step-item"><div class="step-icon">⏳</div><div>Q3: Reactivate Hydrogen campaign as Lookalike (87 leads proven in past campaign)</div></div>
+        <div class="step-item"><div class="step-icon">⏳</div><div>Q3: New Google industry vertical ad groups (Semiconductor, Oil & Gas)</div></div>
+      </div>
+      <div>
+        <div class="step-item"><div class="step-icon">⏳</div><div>Q4: Year-end urgency messaging — B2B procurement budgets peak in Q4</div></div>
+        <div class="step-item"><div class="step-icon">⏳</div><div>Q4: Annual performance review — compare 2026 vs 3-year baseline</div></div>
+        <div class="step-item"><div class="step-icon">⏳</div><div>Dec: Build 2027 creative brief based on full-year 2026 data</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEXT STEPS -->
+<div class="section" id="nextsteps">
+  <div class="section-title">Next Steps — Action Summary</div>
+  <div class="section-sub">What can be done immediately vs. what requires your approval</div>
+
+  <div class="two-col">
+    <div>
+      <div class="info-block green" style="margin-bottom:1rem">
+        <h3>✅ No Client Approval Needed — Do Now</h3>
+      </div>
+      <div class="step-item"><div class="step-icon">✅</div><div>Pause Thermocouple keyword — $563 CPL · $14,051 wasted in 3 years</div></div>
+      <div class="step-item"><div class="step-icon">✅</div><div>Pause RTD + Transmitter General Terms keywords</div></div>
+      <div class="step-item"><div class="step-icon">✅</div><div>Scale 'sanitary gauge' + '8008S' keyword bids (both under $13 CPL gems)</div></div>
+      <div class="step-item"><div class="step-icon">✅</div><div>Split Meta CBO into 3 separate campaigns (done)</div></div>
+      <div class="step-item"><div class="step-icon">✅</div><div>Expand Meta retargeting to 1-year audience window (done)</div></div>
+      <div class="step-item"><div class="step-icon">✅</div><div>Reduce Meta Video budget: $450 → $160/mo</div></div>
+      <div class="step-item"><div class="step-icon">✅</div><div>Update Bing budget in Shape: $481.70 → $400/mo</div></div>
+      <div class="step-item"><div class="step-icon">✅</div><div>Fix Bing keyword collision (ashcroft pressure transmitter)</div></div>
+      <div class="step-item"><div class="step-icon">✅</div><div>Add Bing negative keywords (everest decanter, industrial tools)</div></div>
+      <div class="step-item"><div class="step-icon">✅</div><div>Fix Bing RTD Sensor QS=0 landing page URL</div></div>
+      <div class="step-item"><div class="step-icon">✅</div><div>Add 5+ headlines to Google RSAs (reach 'Excellent' strength)</div></div>
+    </div>
+    <div>
+      <div class="info-block orange" style="margin-bottom:1rem">
+        <h3>⏳ Client Approval Required</h3>
+      </div>
+      <div class="step-item"><div class="step-icon">⏳</div><div>New Meta Ad: Heritage Trust — 'Since 1852' angle</div></div>
+      <div class="step-item"><div class="step-icon">⏳</div><div>New Meta Ad: Pressure Gauge Hero (8008S)</div></div>
+      <div class="step-item"><div class="step-icon">⏳</div><div>New Meta Ads: 3x Retargeting direct response ads</div></div>
+      <div class="step-item"><div class="step-icon">⏳</div><div>Reactivate Hydrogen campaign as Lookalike</div></div>
+      <div class="step-item"><div class="step-icon">⏳</div><div>New Google PMax asset groups (Gauges + Sensors)</div></div>
+      <div class="step-item"><div class="step-icon">⏳</div><div>New General Terms ad groups (Sanitary + OEM)</div></div>
+      <div class="step-item"><div class="step-icon">⏳</div><div>Client to provide CRM data export for Meta Lookalike upgrade</div></div>
+      <div class="step-item"><div class="step-icon">⏳</div><div>Creative Brief approval before any production begins</div></div>
+      <div class="step-item"><div class="step-icon">⏳</div><div>Q3 Meta creative refresh (July 2026)</div></div>
+      <div class="step-item"><div class="step-icon">⏳</div><div>Q4 year-end urgency campaign (Oct–Nov 2026)</div></div>
+    </div>
+  </div>
+
+  <div style="background:var(--navy); border-radius:12px; padding:2rem; text-align:center; margin-top:2rem;">
+    <p style="font-family:'DM Serif Display',serif; font-size:1.5rem; color:white; margin-bottom:0.5rem;">Ready to move forward?</p>
+    <p style="color:rgba(255,255,255,0.6); font-size:0.88rem;">Review the Creative Brief and Ad Copy files for full details. Client approval required before any new creative production begins.</p>
+  </div>
+</div>
+
+<footer>
+  Ashcroft · 2026 Ad Strategy & Creative Brief · Confidential · For Client Review Only
+</footer>
+
+<script>
+// NAV
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// CHANNEL TABS
+function showChannel(prefix, id, el) {
+  document.querySelectorAll('.ch-content.' + prefix).forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.ch-tab').forEach(t => {
+    if(t.onclick && t.onclick.toString().includes("'" + prefix + "'")) t.classList.remove('active');
+  });
+  document.getElementById(prefix + '-' + id).classList.add('active');
+  el.classList.add('active');
+}
+
+// QUARTER TABS
+function showQuarter(id, el) {
+  document.querySelectorAll('.q-content').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.q-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+}
+
+// CPL CHART
+const cplData = [
+  {q:'Q2\'23', v:37.09}, {q:'Q3\'23', v:39.09}, {q:'Q4\'23', v:34.29},
+  {q:'Q1\'24', v:29.01}, {q:'Q2\'24', v:25.74}, {q:'Q3\'24', v:29.06},
+  {q:'Q4\'24', v:26.03}, {q:'Q1\'25', v:21.60}, {q:'Q2\'25', v:17.49},
+  {q:'Q3\'25', v:15.50}, {q:'Q4\'25', v:15.10}, {q:'Q1\'26', v:16.85}
+];
+
+const maxVal = Math.max(...cplData.map(d => d.v));
+const barsEl = document.getElementById('cplBars');
+const labelsEl = document.getElementById('cplLabels');
+
+cplData.forEach((d, i) => {
+  const pct = (d.v / maxVal) * 100;
+  const isLow = d.v <= 18;
+  const wrap = document.createElement('div');
+  wrap.className = 'chart-bar-wrap';
+  wrap.innerHTML = `
+    <div class="chart-bar-val">$${d.v}</div>
+    <div class="chart-bar" style="height:${pct}%; background:${isLow ? '#375623' : '#2E75B6'};" title="$${d.v} CPL"></div>
+  `;
+  barsEl.appendChild(wrap);
+  const lbl = document.createElement('div');
+  lbl.className = 'chart-label';
+  lbl.textContent = d.q;
+  labelsEl.appendChild(lbl);
+});
+</script>
+</body>
+</html>
