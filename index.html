@@ -727,6 +727,7 @@ footer {
     <div class="nav-tab" onclick="showSection('adcopy')">Ad Copy</div>
     <div class="nav-tab" onclick="showSection('calendar')">Calendar</div>
     <div class="nav-tab" onclick="showSection('nextsteps')">Next Steps</div>
+    <div class="nav-tab" onclick="showSection('predictor')" style="background:rgba(255,200,0,0.15); color:#FFD700; border:1px solid rgba(255,200,0,0.3);">⚡ Predictor</div>
   </div>
 </nav>
 
@@ -1534,6 +1535,120 @@ footer {
   </div>
 </div>
 
+<!-- PREDICTOR SECTION -->
+<div class="section" id="predictor">
+  <div class="section-title" style="color:var(--navy)">⚡ Performance Predictor</div>
+  <div class="section-sub">Adjust budget sliders to predict leads, CPL and ROAS — based on 3-year actual data (Apr 2023–Apr 2026)</div>
+
+  <div style="background:var(--light-blue); border:1px solid #aaccee; border-radius:10px; padding:1rem 1.25rem; margin-bottom:1.5rem; font-size:0.85rem; color:var(--navy);">
+    <strong>How this works:</strong> Predictions use real CPL benchmarks from 3 years of account data. Move the sliders to model different budget scenarios. Results update instantly.
+  </div>
+
+  <!-- SLIDERS GRID -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:2rem;">
+
+    <div style="background:white; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-top:4px solid var(--navy);">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+        <div><div style="font-weight:600; font-size:0.9rem; color:var(--navy);">Google Brand Search</div><div style="font-size:0.75rem; color:var(--grey);">Avg CPL: $15.42 · #1 Performer</div></div>
+        <div style="text-align:right;"><span style="font-family:'DM Serif Display',serif; font-size:1.4rem; color:var(--navy);" id="val-brand">$2,311</span><div style="font-size:0.72rem; color:var(--grey);">/month</div></div>
+      </div>
+      <input type="range" id="slider-brand" min="500" max="5000" step="50" value="2311" oninput="updateAll()" style="width:100%; accent-color:var(--navy); height:6px; cursor:pointer;">
+      <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:var(--grey); margin-top:0.3rem;"><span>$500</span><span>$5,000</span></div>
+    </div>
+
+    <div style="background:white; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-top:4px solid var(--green);">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+        <div><div style="font-weight:600; font-size:0.9rem; color:var(--green);">Google PMax</div><div style="font-size:0.75rem; color:var(--grey);">Avg CPL: $12.61 · Best Qtr: $10.37</div></div>
+        <div style="text-align:right;"><span style="font-family:'DM Serif Display',serif; font-size:1.4rem; color:var(--green);" id="val-pmax">$1,761</span><div style="font-size:0.72rem; color:var(--grey);">/month</div></div>
+      </div>
+      <input type="range" id="slider-pmax" min="500" max="4000" step="50" value="1761" oninput="updateAll()" style="width:100%; accent-color:var(--green); height:6px; cursor:pointer;">
+      <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:var(--grey); margin-top:0.3rem;"><span>$500</span><span>$4,000</span></div>
+    </div>
+
+    <div style="background:white; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-top:4px solid var(--blue);">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+        <div><div style="font-weight:600; font-size:0.9rem; color:var(--blue);">Google General Terms</div><div style="font-size:0.75rem; color:var(--grey);">Avg CPL: $23.58 · Most Improved</div></div>
+        <div style="text-align:right;"><span style="font-family:'DM Serif Display',serif; font-size:1.4rem; color:var(--blue);" id="val-general">$1,131</span><div style="font-size:0.72rem; color:var(--grey);">/month</div></div>
+      </div>
+      <input type="range" id="slider-general" min="300" max="3000" step="50" value="1131" oninput="updateAll()" style="width:100%; accent-color:var(--blue); height:6px; cursor:pointer;">
+      <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:var(--grey); margin-top:0.3rem;"><span>$300</span><span>$3,000</span></div>
+    </div>
+
+    <div style="background:white; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-top:4px solid var(--meta);">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+        <div><div style="font-weight:600; font-size:0.9rem; color:var(--meta);">Meta — Lookalike</div><div style="font-size:0.75rem; color:var(--grey);">Avg CPL: $48.86 · Best Meta performer</div></div>
+        <div style="text-align:right;"><span style="font-family:'DM Serif Display',serif; font-size:1.4rem; color:var(--meta);" id="val-lookalike">$481</span><div style="font-size:0.72rem; color:var(--grey);">/month</div></div>
+      </div>
+      <input type="range" id="slider-lookalike" min="100" max="2000" step="50" value="481" oninput="updateAll()" style="width:100%; accent-color:var(--meta); height:6px; cursor:pointer;">
+      <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:var(--grey); margin-top:0.3rem;"><span>$100</span><span>$2,000</span></div>
+    </div>
+
+    <div style="background:white; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-top:4px solid var(--orange);">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+        <div><div style="font-weight:600; font-size:0.9rem; color:var(--orange);">Meta — Retargeting</div><div style="font-size:0.75rem; color:var(--grey);">Target CPL: $120–160 · New campaign</div></div>
+        <div style="text-align:right;"><span style="font-family:'DM Serif Display',serif; font-size:1.4rem; color:var(--orange);" id="val-retargeting">$802</span><div style="font-size:0.72rem; color:var(--grey);">/month</div></div>
+      </div>
+      <input type="range" id="slider-retargeting" min="100" max="2000" step="50" value="802" oninput="updateAll()" style="width:100%; accent-color:var(--orange); height:6px; cursor:pointer;">
+      <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:var(--grey); margin-top:0.3rem;"><span>$100</span><span>$2,000</span></div>
+    </div>
+
+    <div style="background:white; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-top:4px solid var(--teal);">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+        <div><div style="font-weight:600; font-size:0.9rem; color:var(--teal);">Bing Brand Search</div><div style="font-size:0.75rem; color:var(--grey);">Avg CPL: $21.05 · ~15 leads/month</div></div>
+        <div style="text-align:right;"><span style="font-family:'DM Serif Display',serif; font-size:1.4rem; color:var(--teal);" id="val-bing">$400</span><div style="font-size:0.72rem; color:var(--grey);">/month</div></div>
+      </div>
+      <input type="range" id="slider-bing" min="100" max="1000" step="50" value="400" oninput="updateAll()" style="width:100%; accent-color:var(--teal); height:6px; cursor:pointer;">
+      <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:var(--grey); margin-top:0.3rem;"><span>$100</span><span>$1,000</span></div>
+    </div>
+
+  </div>
+
+  <!-- TOTAL BUDGET BAR -->
+  <div style="background:white; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.06); margin-bottom:1.5rem;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+      <div style="font-weight:600; font-size:0.95rem; color:var(--dark);">Total Monthly Budget</div>
+      <div><span style="font-family:'DM Serif Display',serif; font-size:1.6rem; color:var(--navy);" id="total-budget">$6,887</span><span style="font-size:0.8rem; color:var(--grey); margin-left:0.5rem;">/ $7,600 target</span></div>
+    </div>
+    <div style="background:var(--light-grey); border-radius:20px; height:12px; overflow:hidden;">
+      <div id="budget-bar" style="height:100%; border-radius:20px; background:linear-gradient(90deg, var(--navy), var(--blue)); transition:width 0.3s; width:90%;"></div>
+    </div>
+    <div id="budget-note" style="font-size:0.8rem; color:var(--grey); margin-top:0.5rem; text-align:right;"></div>
+  </div>
+
+  <!-- PREDICTION RESULTS -->
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-bottom:1.5rem;">
+    <div style="background:var(--navy); border-radius:12px; padding:1.25rem; text-align:center; color:white;">
+      <div style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; opacity:0.7; margin-bottom:0.4rem;">Predicted Leads/mo</div>
+      <div style="font-family:'DM Serif Display',serif; font-size:2rem;" id="pred-leads">—</div>
+      <div style="font-size:0.72rem; opacity:0.6; margin-top:0.2rem;" id="pred-leads-sub"></div>
+    </div>
+    <div style="background:var(--green); border-radius:12px; padding:1.25rem; text-align:center; color:white;">
+      <div style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; opacity:0.7; margin-bottom:0.4rem;">Blended CPL</div>
+      <div style="font-family:'DM Serif Display',serif; font-size:2rem;" id="pred-cpl">—</div>
+      <div style="font-size:0.72rem; opacity:0.6; margin-top:0.2rem;" id="pred-cpl-sub"></div>
+    </div>
+    <div style="background:var(--blue); border-radius:12px; padding:1.25rem; text-align:center; color:white;">
+      <div style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; opacity:0.7; margin-bottom:0.4rem;">Conv. Value (est.)</div>
+      <div style="font-family:'DM Serif Display',serif; font-size:2rem;" id="pred-value">—</div>
+      <div style="font-size:0.72rem; opacity:0.6; margin-top:0.2rem;">Based on 3-yr avg value/conv.</div>
+    </div>
+    <div style="background:var(--orange); border-radius:12px; padding:1.25rem; text-align:center; color:white;">
+      <div style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; opacity:0.7; margin-bottom:0.4rem;">Est. ROAS</div>
+      <div style="font-family:'DM Serif Display',serif; font-size:2rem;" id="pred-roas">—</div>
+      <div style="font-size:0.72rem; opacity:0.6; margin-top:0.2rem;" id="pred-roas-sub"></div>
+    </div>
+  </div>
+
+  <!-- PER-CHANNEL BREAKDOWN -->
+  <div style="background:white; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06); overflow:hidden; margin-bottom:1.5rem;">
+    <div style="background:var(--navy); padding:0.9rem 1.25rem; color:white; font-weight:600; font-size:0.88rem;">Predicted Leads per Channel / Month</div>
+    <div style="padding:1.25rem;" id="channel-breakdown"></div>
+  </div>
+
+  <!-- INSIGHT -->
+  <div id="pred-insight" style="border-radius:10px; padding:1rem 1.25rem; font-size:0.88rem; border:1px solid var(--border);"></div>
+</div>
+
 <footer>
   Ashcroft · 2026 Ad Strategy & Creative Brief · Confidential · For Client Review Only
 </footer>
@@ -1593,6 +1708,102 @@ cplData.forEach((d, i) => {
   lbl.textContent = d.q;
   labelsEl.appendChild(lbl);
 });
+
+// ── PREDICTOR ENGINE ──────────────────────────────────────────────────────────
+const BENCHMARKS = {
+  brand:       { cpl: 15.42, valuePerConv: 36.85, label: 'Google Brand Search',  color: '#1F4E79' },
+  pmax:        { cpl: 12.61, valuePerConv: 24.32, label: 'Google PMax',           color: '#375623' },
+  general:     { cpl: 23.58, valuePerConv: 35.65, label: 'Google General Terms',  color: '#2E75B6' },
+  lookalike:   { cpl: 48.86, valuePerConv: 30.00, label: 'Meta Lookalike',        color: '#3B5998' },
+  retargeting: { cpl: 140.0, valuePerConv: 30.00, label: 'Meta Retargeting',      color: '#C55A11' },
+  bing:        { cpl: 21.05, valuePerConv: 20.00, label: 'Bing Brand Search',     color: '#00695C' },
+};
+
+const FIXED = { spend: 331.66 + 219.59 + 160.00, leads: 3 };
+
+function getVal(id) { return parseFloat(document.getElementById('slider-' + id).value); }
+
+function updateAll() {
+  const vals = {
+    brand:       getVal('brand'),
+    pmax:        getVal('pmax'),
+    general:     getVal('general'),
+    lookalike:   getVal('lookalike'),
+    retargeting: getVal('retargeting'),
+    bing:        getVal('bing'),
+  };
+
+  Object.keys(vals).forEach(k => {
+    document.getElementById('val-' + k).textContent = '$' + Math.round(vals[k]).toLocaleString();
+  });
+
+  const total = Object.values(vals).reduce((a, b) => a + b, 0) + FIXED.spend;
+  document.getElementById('total-budget').textContent = '$' + Math.round(total).toLocaleString();
+  const pct = Math.min((total / 7600) * 100, 100);
+  document.getElementById('budget-bar').style.width = pct + '%';
+  const diff = total - 7600;
+  const noteEl = document.getElementById('budget-note');
+  if (Math.abs(diff) < 50) {
+    noteEl.style.color = '#375623'; noteEl.textContent = '✅ On target ($7,600)';
+  } else if (diff > 0) {
+    noteEl.style.color = '#C55A11'; noteEl.textContent = `⚠ $${Math.round(diff).toLocaleString()} over target`;
+  } else {
+    noteEl.style.color = '#64748B'; noteEl.textContent = `$${Math.round(Math.abs(diff)).toLocaleString()} under target — room to invest more`;
+  }
+
+  let totalLeads = FIXED.leads;
+  let totalValue = FIXED.leads * 30;
+  const channels = [];
+
+  Object.keys(vals).forEach(k => {
+    const b = BENCHMARKS[k];
+    const spend = vals[k];
+    const leads = (spend / b.cpl) * (1 - Math.max(0, (spend - 2000) / 20000));
+    const value = leads * b.valuePerConv;
+    totalLeads += leads;
+    totalValue += value;
+    channels.push({ key: k, label: b.label, leads, spend, cpl: b.cpl, color: b.color });
+  });
+
+  const blendedCPL = total / totalLeads;
+  const roas = totalValue / total;
+
+  document.getElementById('pred-leads').textContent = Math.round(totalLeads);
+  document.getElementById('pred-leads-sub').textContent = `~${Math.round(totalLeads * 12)} leads/year`;
+  document.getElementById('pred-cpl').textContent = '$' + blendedCPL.toFixed(2);
+  document.getElementById('pred-cpl-sub').textContent = blendedCPL < 20 ? '🟢 Excellent' : blendedCPL < 35 ? '🟡 Good' : '🔴 High';
+  document.getElementById('pred-value').textContent = '$' + Math.round(totalValue).toLocaleString();
+  document.getElementById('pred-roas').textContent = roas.toFixed(2) + 'x';
+  document.getElementById('pred-roas-sub').textContent = roas >= 3 ? '🟢 Strong' : roas >= 2 ? '🟡 Moderate' : '🔴 Low';
+
+  const maxLeads = Math.max(...channels.map(c => c.leads));
+  const breakdownEl = document.getElementById('channel-breakdown');
+  breakdownEl.innerHTML = channels.map(c => `
+    <div style="margin-bottom:1rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+        <div style="font-size:0.85rem; font-weight:500; color:#1A1A1A;">${c.label}</div>
+        <div style="display:flex; gap:1.5rem; font-size:0.82rem;">
+          <span style="color:#64748B;">$${Math.round(c.spend).toLocaleString()}/mo</span>
+          <span style="color:#64748B;">$${c.cpl.toFixed(2)} CPL</span>
+          <span style="font-weight:600; color:${c.color};">${Math.round(c.leads)} leads</span>
+        </div>
+      </div>
+      <div style="background:#F1F5F9; border-radius:20px; height:8px; overflow:hidden;">
+        <div style="height:100%; width:${maxLeads > 0 ? (c.leads/maxLeads*100) : 0}%; background:${c.color}; border-radius:20px; transition:width 0.4s ease;"></div>
+      </div>
+    </div>
+  `).join('');
+
+  const insightEl = document.getElementById('pred-insight');
+  const topChannel = [...channels].sort((a,b) => b.leads - a.leads)[0];
+  let insightBg = '#E2EFDA', insightBorder = '#b8d9a8', insightColor = '#375623';
+  if (roas < 2) { insightBg = '#FCE4D6'; insightBorder = '#f5c6a0'; insightColor = '#C55A11'; }
+  else if (roas < 3) { insightBg = '#FFF3CD'; insightBorder = '#ffe08a'; insightColor = '#856404'; }
+  insightEl.style.cssText = `background:${insightBg}; border:1px solid ${insightBorder}; color:${insightColor}; border-radius:10px; padding:1rem 1.25rem; font-size:0.88rem;`;
+  insightEl.innerHTML = `<strong>📊 Predictor Insight:</strong> At this budget mix, <strong>${topChannel.label}</strong> drives the most leads (~${Math.round(topChannel.leads)}/mo). Blended CPL of <strong>$${blendedCPL.toFixed(2)}</strong> ${blendedCPL < 25 ? 'is efficient — on track with 3-year benchmarks.' : 'is above the $20 historical avg — consider shifting more budget to Google Brand ($15.42 CPL) or PMax ($12.61 CPL).'} ${roas >= 3 ? `ROAS of ${roas.toFixed(2)}x is strong — above the 3.1x 3-year Google benchmark.` : `ROAS of ${roas.toFixed(2)}x is below the 3.1x benchmark — shift budget toward lower-CPL channels.`}`;
+}
+
+window.addEventListener('DOMContentLoaded', updateAll);
 </script>
 </body>
 </html>
